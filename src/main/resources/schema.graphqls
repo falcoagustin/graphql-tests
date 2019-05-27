@@ -1,0 +1,54 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    bookById(id: ID!): Book
+    allBooks(page: Int): [Book]!
+    authorById(id: ID!): Author
+}
+
+type Mutation {
+    createAuthor(firstName: String!, lastName: String!): Author
+    bulkCreateAuthors(objects: [AuthorBatch!]!): [Author!]
+
+    createBook(name: String!, author: AuthorInput!): Book
+    updateBook(id: ID!, name: String!, authorId: ID): Book
+    deleteBook(id: ID!): ID!
+
+    createUser(email: String!, password: String!): User
+    login(email: String!, password: String!): String # Cookie
+}
+
+type Book {
+    id: ID!
+    name: String
+    pageCount: Int
+    author: Author
+}
+
+type Author {
+    id: ID!
+    firstName: String
+    lastName: String
+}
+
+type User {
+    id: ID!
+    email: String
+}
+
+input AuthorInput {
+    id: ID!
+}
+
+input BookInput {
+    id: ID!
+}
+
+input AuthorBatch {
+    firstName: String
+    lastName: String
+    books: [ID!]
+}
