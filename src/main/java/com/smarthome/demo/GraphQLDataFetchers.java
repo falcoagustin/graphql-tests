@@ -28,9 +28,6 @@ public class GraphQLDataFetchers {
     private UserRepository userRepository;
     private LoginService loginService;
 
-    // TODO: REALLY REALLY Dummy impl
-    private final ThreadLocal<User> currentUser = new ThreadLocal<>();
-
     public DataFetcher getBookByIdDataFetcher() {
         return dataFetchingEnvironment -> {
             String bookId = dataFetchingEnvironment.getArgument("id");
