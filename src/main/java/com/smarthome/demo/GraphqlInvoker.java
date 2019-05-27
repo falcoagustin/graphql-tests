@@ -18,7 +18,6 @@ import java.util.concurrent.CompletableFuture;
 @Primary
 public class GraphqlInvoker implements GraphQLInvocation {
 
-
     @Autowired
     GraphQL graphQL;
 
