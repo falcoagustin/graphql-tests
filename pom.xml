@@ -24,7 +24,7 @@
         <guava.version>27.0.1-jre</guava.version>
         <commons.codec.version>1.11</commons.codec.version>
         <commons.collections.version>4.1</commons.collections.version>
-        <commons.io.version>2.6</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <commons.lang.version>3.6</commons.lang.version>
     </properties>
 
